@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+REMOTE=erikbenoist.com
+DEPLOY_USER=deploy
+PROJ_DIR=/home/deploy/termo.erikbenoist.com
+BUILD_DIR=./dist
+BUILD=dist.tar
+
+run () {
+  echo $1
+  ssh $DEPLOY_USER@$REMOTE "$1"
+  if [ $? -eq 0 ]
+  then
+    echo "OK"
+  fi
+}
+
+ember build
+
+if [ $? -eq 0 ]
+then
+  echo "Preparing..."
+  run "mkdir -p $PROJ_DIR; true"
+
+  cd $BUILD_DIR && tar cvf $BUILD *
+
+  echo "Copying new code to server..."
+  scp $BUILD $DEPLOY_USER@$REMOTE:$PROJ_DIR/$BUILD
+
+  echo "Deploying..."
+  run "cd $PROJ_DIR && tar xvf $BUILD"
+fi

@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-md-12">
+    <figure>
+      {{t-knob
+      value=thermostat.targetTemperature
+      size="90%"
+      color="#E67E22"
+      }}
+      <figcaption>
+        Target Temp
+      </figcaption>
+    </figure>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <figure>
+      {{t-knob value=thermometer.currentTemp readOnly=true color="#27AE60" size="75%"}}
+      <figcaption>
+        Current Temp
+      </figcaption>
+    </figure>
+  </div>
+</div>

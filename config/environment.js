@@ -1,9 +1,16 @@
 /* jshint node: true */
+fs = require("fs");
 
 module.exports = function(environment) {
-  var ENV = {
+  var ENV;
+  var secrets;
+  secrets = JSON.parse(fs.readFileSync("./config/secrets.json"));
+
+  ENV = {
     modulePrefix: 'termo-ui',
     environment: environment,
+    apiKey: secrets.apiKey,
+    host: secrets.host,
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {

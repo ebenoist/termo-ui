@@ -1,8 +1,5 @@
-# Termo-ui
-
-This README outlines the details of collaborating on this Ember application.
-
-A short introduction of this app could easily go here.
+# Termo-UI
+This is the UI for the [termo-api](https://github.com/ebenoist/termo-api) backend, a DIY RaspberryPi driven thermostat.
 
 ## Prerequisites
 
@@ -11,6 +8,10 @@ You will need the following things properly installed on your computer.
 * [Git](http://git-scm.com/)
 * [Node.js](http://nodejs.org/) (with NPM) and [Bower](http://bower.io/)
 
+You will also need a `config/secrets.json` file, see `config/secrets.json.example`
+
+You will need a [termo-api backend](https://github.com/ebenoist/termo-api) and a termo unit.
+
 ## Installation
 
 * `git clone <repository-url>` this repository
@@ -18,34 +19,15 @@ You will need the following things properly installed on your computer.
 * `npm install`
 * `bower install`
 
-## Running / Development
-
-* `ember server`
-* Visit your app at http://localhost:4200.
-
-### Code Generators
-
-Make use of the many generators for code, try `ember help generate` for more details
-
-### Running Tests
-
-* `ember test`
-* `ember test --server`
-
 ### Building
 
-* `ember build` (development)
-* `ember build --environment production` (production)
+* `ember build`
 
 ### Deploying
-
-Specify what it takes to deploy your app.
+`$ script/deploy`
+*Note* See deploy script for server setup
 
 ## Further Reading / Useful Links
 
 * ember: http://emberjs.com/
 * ember-cli: http://www.ember-cli.com/
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
-
