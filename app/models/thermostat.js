@@ -39,7 +39,7 @@ Thermostat.reopen({
     var data;
     data = JSON.stringify({ thermostat: this });
     Ember.$.ajax({
-      url: Env.host + "v1/thermostat",
+      url: Env.host + "/v1/thermostat",
       headers: { "API-KEY": Env.apiKey },
       method: "POST",
       data: data,
