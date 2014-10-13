@@ -14,9 +14,12 @@ export default Ember.Component.extend({
       min: 10,
       readOnly: this.get("readOnly"),
       max: 26,
+      format: function (d) {
+        var f = (d * 1.8) + 32;
+        return parseInt(f) + "°F";
+      },
       fgColor: this.get("color"),
       displayInput: true,
-      val: this.get("value"),
       change: function (newValue) {
         _this.set("value", newValue);
       },
