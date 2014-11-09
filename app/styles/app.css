@@ -21,11 +21,13 @@ body {
 }
 
 #target {
-  margin: 1em;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 #target h1 {
-  margin: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 @media screen and (max-width: 480px) {

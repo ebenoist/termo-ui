@@ -10,11 +10,11 @@ export default Ember.Component.extend({
       unit: 'c',
       success: function(weather) {
         console.log(weather);
-        var html = '<p>'+weather.temp+'&deg;'+weather.units.temp+'</p>';
+        var html = weather.temp+'&deg;'+weather.units.temp;
         _this.$().html(html);
       },
       error: function(error) {
-        _this.$().html('<p>'+error+'</p>');
+        _this.$().html(error);
       }
     });
   }.on("didInsertElement")
