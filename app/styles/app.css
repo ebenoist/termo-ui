@@ -8,11 +8,12 @@ body {
 
 /* Make the masthead heading the same height as the navigation */
 .header h1 {
-  padding: .5em;
-  margin: 0;
-  background-color: #00BCD4;
   color: white;
-  margin-bottom: 1em;
+}
+
+.header {
+  background-color: #00BCD4;
+  margin-bottom: 3em;
 }
 
 .status {
@@ -22,7 +23,6 @@ body {
 .container {
   max-width: 500px;
   box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.26);
-  padding: 0;
 }
 
 #target {
@@ -37,7 +37,6 @@ body {
 
 @media screen and (max-width: 480px) {
   .container {
-    padding: 0;
     box-shadow: 0px 0px 0px 0;
   }
 }
