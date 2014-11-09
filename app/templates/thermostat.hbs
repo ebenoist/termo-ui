@@ -1,12 +1,12 @@
 <div class="row">
-  <div class="col-md-8">
+  <div class="col-md-6">
     <div class="row">
       <div class="col-md-12 control">
         <i {{action 'turnUp' }} class="fa fa-plus fa-3x"></i>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-12 temp">
+      <div class="col-md-12 temp" id="target">
         <figure>
           <h1>{{thermostat.targetTemp}}&deg;C</h1>
           <figcaption>
@@ -21,13 +21,13 @@
       </div>
     </div>
   </div>
-  <div class="col-md-4">
+  <div class="col-md-6">
     <div class="row">
       <div class="col-md-12 temp">
         <figure>
           <h3>{{thermostat.currentTemp}}&deg;C</h3>
           <figcaption>
-            Current Temp
+            Indoor Temp
           </figcaption>
         </figure>
       </div>
@@ -37,7 +37,7 @@
         <figure>
           <h3>{{t-weather}}</h3>
           <figcaption>
-            Ambient Temp
+            Outdoor Temp
           </figcaption>
         </figure>
       </div>

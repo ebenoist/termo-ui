@@ -20,6 +20,14 @@ body {
   padding: 0;
 }
 
+#target {
+  margin: 1em;
+}
+
+#target h1 {
+  margin: 10px;
+}
+
 .control {
   text-align: center;
   cursor: pointer;
