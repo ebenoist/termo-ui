@@ -2,7 +2,8 @@
 body {
   padding-bottom: 20px;
   color: black;
-  font: 'Open Sans', "Helvetica Neue", "sans-serif";
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
 }
 
 /* Make the masthead heading the same height as the navigation */
