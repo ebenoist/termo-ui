@@ -15,7 +15,7 @@ run () {
   fi
 }
 
-ember build
+ember build --environment production
 
 if [ $? -eq 0 ]
 then

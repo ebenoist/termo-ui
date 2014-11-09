@@ -1,24 +1,46 @@
 <div class="row">
-  <div class="col-md-12">
-    <figure>
-      {{t-knob
-      value=thermostat.targetTemperature
-      size="90%"
-      color="#E67E22"
-      }}
-      <figcaption>
-        Target Temp
-      </figcaption>
-    </figure>
+  <div class="col-md-8">
+    <div class="row">
+      <div class="col-md-12 control">
+        <i {{action 'turnUp' }} class="fa fa-plus fa-3x"></i>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 temp">
+        <figure>
+          <h1>{{thermostat.targetTemp}}&deg;C</h1>
+          <figcaption>
+            Target Temp
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 control">
+        <i {{action 'turnDown' }} class="fa fa-minus fa-3x"></i>
+      </div>
+    </div>
   </div>
-</div>
-<div class="row">
-  <div class="col-md-12">
-    <figure>
-      {{t-knob value=thermometer.currentTemp readOnly=true color="#27AE60" size="75%"}}
-      <figcaption>
-        Current Temp
-      </figcaption>
-    </figure>
+  <div class="col-md-4">
+    <div class="row">
+      <div class="col-md-12 temp">
+        <figure>
+          <h3>{{thermostat.currentTemp}}&deg;C</h3>
+          <figcaption>
+            Current Temp
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 temp">
+        <figure>
+          <h3>{{t-weather}}</h3>
+          <figcaption>
+            Ambient Temp
+          </figcaption>
+        </figure>
+      </div>
+    </div>
   </div>
 </div>

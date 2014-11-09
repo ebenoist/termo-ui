@@ -11,6 +11,7 @@ app.import('bower_components/bootstrap/dist/css/bootstrap.css');
 app.import('bower_components/font-awesome/css/font-awesome.css');
 app.import('bower_components/weather-icons/css/weather-icons.css');
 app.import('bower_components/jquery-knob/js/jquery.knob.js');
+app.import('bower_components/simpleWeather/jquery.simpleWeather.js');
 
 var faTree = pickFiles('bower_components/font-awesome/fonts', {
   srcDir: '/',

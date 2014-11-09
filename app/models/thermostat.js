@@ -2,8 +2,9 @@ import Ember from "ember";
 import Env from "../config/environment";
 
 var Thermostat = Ember.Object.extend({
-  targetTemperature: null,
-  on: true
+  targetTemp: null,
+  heaterOn: true,
+  currentTemp: null
 });
 
 Thermostat.reopenClass({
@@ -15,7 +16,7 @@ Thermostat.reopenClass({
       headers: { "API-KEY": Env.apiKey }
     });
     p.then(function(data) {
-      thermostat.setProperties(data.thermostat);
+      thermostat.setProperties(data);
     });
 
     return thermostat;
@@ -25,30 +26,27 @@ Thermostat.reopenClass({
 Thermostat.reopen({
   _targetTempChanged: function() {
     if (this.oldTarget != null) {
-      if (this.oldTarget !== this.get("targetTemperature")) {
+      if (this.oldTarget !== this.get("targetTemp")) {
         this.save();
       }
     }
-  }.observes("targetTemperature"),
+  }.observes("targetTemp"),
 
   _valueWillChange: function(){
-    this.oldTarget = this.get("targetTemperature");
-  }.observesBefore("targetTemperature"),
+    this.oldTarget = this.get("targetTemp");
+  }.observesBefore("targetTemp"),
 
   save: function() {
-    var data;
-    data = JSON.stringify({ thermostat: this });
     Ember.$.ajax({
       url: Env.host + "/v1/thermostat",
       headers: { "API-KEY": Env.apiKey },
       method: "POST",
-      data: data,
+      data: JSON.stringify(this),
       contentType: "application/json"
     });
 
     return this;
   }
 });
-
 
 export default Thermostat;
